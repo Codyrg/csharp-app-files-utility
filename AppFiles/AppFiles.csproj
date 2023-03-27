@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <SemVer>1.0.3</SemVer>
+    <SemVer>1.0.4</SemVer>
     <Version>$(SemVer)</Version>
     <Year>2023</Year>
   </PropertyGroup>
