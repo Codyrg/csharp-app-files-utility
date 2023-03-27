@@ -7,7 +7,7 @@ This is a simple application that allows you to manage your .NET applications fi
 
 ## Usage
 
-This library contains a single publicly exposed class, `AppFiles`. This class should be instantiated in you application and the used to access the files in your application. The constructor of this class takes the following parameters:
+This library contains a single publicly exposed class, `AppFiles`. This class should be instantiated in your application and the used to access the files in your application. The constructor of this class takes the following parameters:
 
 - `string appName`: The name of your application. This is used to create a folder in the company folder created in the user's `AppData` folder to store your application's files.
 - `string company`: The name of your company. This is used to create a folder in the user's `AppData` folder to store your application folders.

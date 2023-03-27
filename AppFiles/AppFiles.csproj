@@ -15,7 +15,18 @@
     <Title>AppFiles</Title>
     <Authors>Cody Gillespie</Authors>
     <Description>Library for managing the creation of application files and folders.</Description>
+    <PackageTags>appfiles;app;files;folders;file;folder;filemanager;</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Codyrg/csharp-app-files-utility</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Codyrg/csharp-app-files-utility</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageId>AppFiles</PackageId>
+    <PackageVersion>$(SemVer)</PackageVersion>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="readme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
   </ItemGroup>
