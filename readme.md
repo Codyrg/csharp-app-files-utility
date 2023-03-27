@@ -3,7 +3,7 @@
 This is a simple application that allows you to manage your .NET applications files. Import this application into your project using NuGet with one of the following methods:
     - Package Manager: `Install-Package ApplicationFilesManager`
     - .NET CLI: `dotnet add package ApplicationFilesManager`
-    - Package Reference: `<PackageReference Include="ApplicationFilesManager" Version="1.0.2" />`
+    - Package Reference: `<PackageReference Include="ApplicationFilesManager" Version="1.0.3" />`
 
 ## Usage
 
