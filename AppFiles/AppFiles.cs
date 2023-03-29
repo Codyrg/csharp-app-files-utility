@@ -5,19 +5,19 @@ using Microsoft.Extensions.Logging;
 /// <summary>
 /// Provides methods for saving and loading files to the local application data folder.
 /// </summary>
-public class AppFiles
+public class AppFileManager
 {
-    private readonly ILogger<AppFiles> _logger = new LoggerFactory().CreateLogger<AppFiles>();
+    private readonly ILogger<AppFileManager> _logger = new LoggerFactory().CreateLogger<AppFileManager>();
     
     /// <summary>
-    /// Initializes a new instance of the <see cref="AppFiles"/> class.
+    /// Initializes a new instance of the <see cref="AppFileManager"/> class.
     /// </summary>
     /// <param name="appName">The name of the application. This will be created as a folder within the company root folder.</param>
     /// <param name="companyName">The name of the company. This will be created as a folder within the apps root folder.</param>
     /// <param name="appsRoot">The root folder where the company root folder will be created. If not specified, the LocalApplicationData folder will be used.</param>
     /// <exception cref="ArgumentException">Thrown if appName or companyName contain invalid characters.</exception>
     /// <exception cref="Exception">Thrown if the company root folder cannot be created or the app root folder cannot be created.</exception>
-    public AppFiles(string appName, string companyName, string appsRoot = "")
+    public AppFileManager(string appName, string companyName, string appsRoot = "")
     {
         if(string.IsNullOrEmpty(appsRoot))
         {

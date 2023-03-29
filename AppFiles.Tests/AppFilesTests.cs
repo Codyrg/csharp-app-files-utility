@@ -31,7 +31,7 @@ public class AppFilesTests
     {
         Assert.DoesNotThrow(() =>
         {
-            var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+            var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         });
     }
     
@@ -43,7 +43,7 @@ public class AppFilesTests
     {
         Assert.Throws<ArgumentException>(() =>
         {
-            var appFiles = new AppFiles("Test Product 1" + '\0', CompanyName, _testingDirectory);
+            var appFiles = new AppFileManager("Test Product 1" + '\0', CompanyName, _testingDirectory);
         });
     }
     
@@ -55,7 +55,7 @@ public class AppFilesTests
     {
         Assert.Throws<ArgumentException>(() =>
         {
-            var appFiles = new AppFiles(ProductNameOne, "Test Company" + '\0', _testingDirectory);
+            var appFiles = new AppFileManager(ProductNameOne, "Test Company" + '\0', _testingDirectory);
         });
     }
     
@@ -67,7 +67,7 @@ public class AppFilesTests
     {
         Assert.Throws<ArgumentException>(() =>
         {
-            var appFiles = new AppFiles(ProductNameOne, CompanyName, "C:\\Invalid\\Path");
+            var appFiles = new AppFileManager(ProductNameOne, CompanyName, "C:\\Invalid\\Path");
         });
     }
     
@@ -79,8 +79,8 @@ public class AppFilesTests
     {
         Assert.DoesNotThrow(() =>
         {
-            var appFilesOne = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
-            var appFilesTwo = new AppFiles(ProductNameTwo, CompanyName, _testingDirectory);
+            var appFilesOne = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
+            var appFilesTwo = new AppFileManager(ProductNameTwo, CompanyName, _testingDirectory);
         });
     }
     
@@ -90,7 +90,7 @@ public class AppFilesTests
     [Test]
     public void TestFolderCreation()
     {
-        var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+        var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         Assert.IsTrue(Directory.Exists(appFiles.AppRootPath));
     }
     
@@ -100,7 +100,7 @@ public class AppFilesTests
     [Test]
     public void TestTextFileSaveNoSubfolder()
     {
-        var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+        var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         appFiles.SaveTextFile(TestTextFileName, "This is a test file.");
         Assert.IsTrue(File.Exists(Path.Combine(appFiles.AppRootPath, TestTextFileName)));
     }
@@ -111,7 +111,7 @@ public class AppFilesTests
     [Test]
     public void TestTextFileSaveWithSubfolder()
     {
-        var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+        var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         var saved = appFiles.SaveTextFile(TestTextFileName, "This is a test file.", Subfolder);
         var path = Path.Combine(appFiles.AppRootPath, Subfolder, TestTextFileName);
         var exists = File.Exists(path);
@@ -124,7 +124,7 @@ public class AppFilesTests
     [Test]
     public void TestBinaryFileSave()
     {
-        var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+        var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         appFiles.SaveBinaryFile(TestTextFileName, new byte[] { 0x00, 0x01, 0x02, 0x03 });
         Assert.IsTrue(File.Exists(Path.Combine(appFiles.AppRootPath, Subfolder, TestTextFileName)));
     }
@@ -135,7 +135,7 @@ public class AppFilesTests
     [Test]
     public void TestListDirectory()
     {
-        var appFiles = new AppFiles(ProductNameOne, CompanyName, _testingDirectory);
+        var appFiles = new AppFileManager(ProductNameOne, CompanyName, _testingDirectory);
         appFiles.SaveTextFile(TestTextFileName, "This is a test file.", Subfolder);
         appFiles.SaveBinaryFile(TestBinaryFileName, new byte[] { 0x00, 0x01, 0x02, 0x03 }, Subfolder);
         var files = appFiles.ListDirectory(Subfolder, "*.txt").ToList();
