@@ -2,9 +2,9 @@
 
 This is a simple application that allows you to manage your .NET applications files. Import this application into your project using NuGet with one of the following methods:
 
-- Package Manager: `Install-Package AppFileManager`
-- .NET CLI: `dotnet add package AppFileManager`
-- Package Reference: `<PackageReference Include="AppFileManager" Version="1.1.2" />`
+- Package Manager: `Install-Package AppFiles`
+- .NET CLI: `dotnet add package AppFiles`
+- Package Reference: `<PackageReference Include="AppFiles" Version="1.1.2" />`
 
 ## Usage
 
