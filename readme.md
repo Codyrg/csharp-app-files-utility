@@ -4,7 +4,7 @@ This is a simple application that allows you to manage your .NET applications fi
 
 - Package Manager: `Install-Package AppFileManager`
 - .NET CLI: `dotnet add package AppFileManager`
-- Package Reference: `<PackageReference Include="AppFileManager" Version="1.0.6" />`
+- Package Reference: `<PackageReference Include="AppFileManager" Version="1.1.1" />`
 
 ## Usage
 
